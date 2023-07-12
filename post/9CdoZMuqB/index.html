@@ -1,0 +1,431 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Example</title>
+<meta name="description" content=": )  It's Example Blog. " />
+<link rel="shortcut icon" href="https://g0uz1.top/favicon.ico?v=1689148240281">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://g0uz1.top/styles/main.css">
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://g0uz1.top">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://g0uz1.top/images/avatar.png?v=1689148240281" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Example</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">①. 环境准备</a>
+<ul>
+<li><a href="#0x01-%E7%A1%AC%E4%BB%B6%E8%AE%BE%E5%A4%87">0x01. 硬件设备</a></li>
+<li><a href="#0x02-%E8%A7%A3%E9%94%81bl%E9%94%81">0x02. 解锁BL锁</a></li>
+<li><a href="#0x03-%E5%88%B7recovery">0x03. 刷recovery</a></li>
+<li><a href="#0x04-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95">0x04. 操作记录</a></li>
+<li><a href="#0x05-%E5%88%B7%E5%85%A5magisk">0x05. 刷入magisk</a></li>
+<li><a href="#0x06-%E5%88%B7%E5%85%A5lsposed">0x06. 刷入LSPosed</a></li>
+</ul>
+</li>
+<li><a href="#2-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">②. 常见问题</a>
+<ul>
+<li><a href="#0x01-%E8%BF%9E%E6%8E%A5wifi%E6%8F%90%E7%A4%BA%E7%BD%91%E7%BB%9C%E8%AE%BF%E9%97%AE%E5%8F%97%E9%99%90">0x01. 连接wifi提示网络访问受限</a></li>
+<li><a href="#0x02-%E6%97%B6%E9%97%B4%E6%97%A0%E6%B3%95%E5%90%8C%E6%AD%A5">0x02. 时间无法同步</a></li>
+<li><a href="#0x03-jeb%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95">0x03. JEB动态调试</a></li>
+</ul>
+</li>
+<li><a href="#3-%E8%BD%AF%E4%BB%B6%E9%9B%86">③. 软件集</a>
+<ul>
+<li><a href="#0x01-%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6">0x01. 电脑软件</a></li>
+<li><a href="#0x02-%E6%89%8B%E6%9C%BA%E8%BD%AF%E4%BB%B6">0x02. 手机软件</a></li>
+</ul>
+</li>
+<li><a href="#4-%E5%8F%82%E8%80%83%E8%BF%9E%E6%8E%A5">④. 参考连接</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="ri-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></div>
+    <a class="rss" href="https://g0uz1.top/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">Andorid 调试环境准备</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2023-02-01 / 5 min read
+        </div>
+        
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://cdn-1252062383.cos.ap-beijing.myqcloud.com/202302041343994.png" alt="">
+        
+        <div class="post-content yue">
+          <p><strong>工欲善其事，必先利其器。—— 《论语 卫灵公》</strong></p>
+<!-- more -->
+<p>推荐测试设备：Pixel、Nexus、Xiaomi、OnePlus<br>
+推荐设备系统：AOSP <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>、LineageOS、Havoc-OS<br>
+推荐调试工具：JADX <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>、JEB <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>、Frida <sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
+<h3 id="1-环境准备">①. 环境准备</h3>
+<h4 id="0x01-硬件设备">0x01. 硬件设备</h4>
+<p>目前手上用的是Xiaomi redmi系列的Note 7，是之前用淘汰下来的。虽然外屏有不少裂痕偶尔触摸失灵，但还不影响正常使用。建议大家有旧手机很直接用旧的就好，当然没有实体机用模拟器也行。不要花冤枉钱～</p>
+<h4 id="0x02-解锁bl锁">0x02. 解锁BL锁</h4>
+<p>已手上的xiaomi为例，直接在MIUI官网下载【<a href="https://www.miui.com/unlock/index.html">解锁工具包</a>】。</p>
+<h4 id="0x03-刷recovery">0x03. 刷recovery</h4>
+<p>这里还是强烈推荐<a href="https://orangefox.download/zh-CN">橙狐recovery</a>，橙狐recovery内置magisk管理模块，当后面magisk模块导致手机故障时，直接通过橙狐recovery关闭magisk模块即可，避免无意义的重复刷机。</p>
+<table>
+<thead>
+<tr>
+<th>第三方recovery</th>
+<th>下载地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TWRP</td>
+<td>https://twrp.me/</td>
+</tr>
+<tr>
+<td>SHRP</td>
+<td>https://skyhawkrecovery.github.io/</td>
+</tr>
+<tr>
+<td>橙狐</td>
+<td>https://orangefox.tech/</td>
+</tr>
+<tr>
+<td>PitchBlack</td>
+<td>https://pitchblackrecovery.com/</td>
+</tr>
+</tbody>
+</table>
+<h4 id="0x04-操作记录">0x04. 操作记录</h4>
+<pre><code class="language-bash">#查看本地连接是否正常
+adb devices
+#进入bootloader模式
+adb reboot bootloader
+#查询设备是否正常连接
+fastboot devices -l
+#刷入TWRP.img
+fastboot flash recovery recovery-TWRP.img
+</code></pre>
+<h4 id="0x05-刷入magisk">0x05. 刷入magisk</h4>
+<p>magisk官方的几个分支：<br>
+&gt; [测试版] Beta<br>
+&gt; [金丝雀] Canary<br>
+&gt; [调试版] Debug<br>
+&gt; [稳定版] Stable</p>
+<p>第三方维护magisk版本<br>
+&gt; [阿尔法] Alpha<br>
+&gt; [德尔塔] Delta<br>
+&gt; [简易版] Lite</p>
+<p>【❗️注意第三方维护版本，无稳定性保障。确认使用前，做好随时做好数据恢复的心理准备。】</p>
+<p>如果追求稳定推荐使用Stable版<br>
+如果想要更隐蔽的运行magisk，建议尝试Canary。<br>
+如果你很有冒险精神，不妨试一试第三方维护的版本。<br>
+<a href="https://github.com/topjohnwu/Magisk/releases/">稳定版</a><br>
+<a href="https://github.com/topjohnwu/magisk-files">官方其他版本</a></p>
+<pre><code class="language-bash">#查看本地连接是否正常
+adb devices
+#进入recovery模式
+adb reboot recovery
+#adb sideload刷入magisk
+adb sideload magisk.apk
+#完成后重启，安装apk
+adb install magisk.apk
+</code></pre>
+<h4 id="0x06-刷入lsposed">0x06. 刷入LSPosed</h4>
+<p>自己用的是Zygisk，magisk里面开启即可。主要图个方便，不用再安装Riru。<br>
+<a href="https://github.com/LSPosed/LSPosed/releases">LSPosed下载</a><br>
+直接开启magisk的Zygisk，选着压缩包刷入即可。</p>
+<h3 id="2-常见问题">②. 常见问题</h3>
+<h4 id="0x01-连接wifi提示网络访问受限">0x01. 连接wifi提示网络访问受限</h4>
+<p>Google从 Android 5.0 开始就引入了「Captive Portal」机制，主要用来检测 WiFI 网络认证是否正常，默认检测访问的是谷歌服务器(http://clients3.google.com/generate_204)。众所周知国内在未知能力影响下，一直无法正常访问Google相关页面。这种提示并不影响使用，如果一定要处理。我们也可以通过替换captive portal验证连接实现，解决方案如下</p>
+<p>方案一：</p>
+<pre><code class="language-bash">#关闭验证机制
+adb shell &quot;settings put global captive_portal_mode 0&quot;
+</code></pre>
+<p>方案二：</p>
+<pre><code class="language-bash">#删除默认的验证地址
+adb shell &quot;settings delete global captive_portal_https_url&quot;
+adb shell &quot;settings delete global captive_portal_http_url&quot;
+#修改为国内可访问的验证地址
+adb shell &quot;settings put global captive_portal_use_https 1&quot;
+adb shell &quot;settings put global captive_portal_use_http 1&quot;
+adb shell &quot;settings put global captive_portal_https_url https://www.gstatic.com/generate_204&quot;
+adb shell &quot;settings put global captive_portal_http_url http://www.gstatic.com/generate_204&quot;
+</code></pre>
+<h4 id="0x02-时间无法同步">0x02. 时间无法同步</h4>
+<p>由于Pixel的默认 NTP 服务器 Google 的 time 服务器，受限于特殊原因国内无法访问。可以通过以下命令替换NTP 服务器。</p>
+<pre><code class="language-bash">adb shell &quot;settings put global ntp_server pool.ntp.org&quot;
+</code></pre>
+<h4 id="0x03-jeb动态调试">0x03. JEB动态调试</h4>
+<p>请确保AndroidManifest.xml里添加可调试权限<br>
+android:debuggable=&quot;true&quot;<br>
+或者采用Magisk命令</p>
+<pre><code>su
+magisk resetprop ro.debuggable 1
+stop;start;
+</code></pre>
+<h3 id="3-软件集">③. 软件集</h3>
+<h4 id="0x01-电脑软件">0x01. 电脑软件</h4>
+<p>&gt; Jeb<br>
+&gt; Jadx<br>
+&gt; Scrcpy</p>
+<h4 id="0x02-手机软件">0x02. 手机软件</h4>
+<p>&gt; Momo<br>
+&gt; Hunter<br>
+&gt; SimpleHook、HookTest<br>
+&gt; JsHook<br>
+&gt; Guise<br>
+&gt; 设备信息<br>
+&gt; 算法助手<br>
+&gt; 异常跟踪、异常示例<br>
+&gt; MT管理器<br>
+&gt; 开发助手<br>
+&gt; 合规检查测试DEMO<br>
+&gt; BlackDex</p>
+<h3 id="4-参考连接">④. 参考连接</h3>
+<ul>
+<li><a href="https://source.android.com">AOSP官网</a></li>
+<li><a href="https://download.lineageos.org/">LineageOS官网</a></li>
+<li><a href="https://havoc-os.com">Havoc-OS官网</a></li>
+<li><a href="https://forum.xda-developers.com">xda论坛</a></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>AOSP，&quot;Android Open Source Project【Android 开放源代码项目】&quot;。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>JADX，逆向静态分析工具。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>JEB，静态分析和动态调试工具。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Frida，居家旅行杀人放火必备神器。 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+        </div>
+
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://g0uz1.top/tag/IoQGRfly1b/">
+            <span class="flex-auto">Andorid</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://g0uz1.top/post/Hm7ywhZj_/">
+                <h3 class="post-title">
+                  <i class="ri-arrow-left-line"></i>
+                  Android APP的结构组成
+                </h3>
+              </a>
+            </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://g0uz1.top/post/ckd330jw/">
+                <h3 class="post-title">
+                  Smali语言学习笔记
+                  <i class="ri-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'a23dba280edd1e49037e',
+    clientSecret: 'fd74d7d6b3470a691211438635d3e6b0d372ff6f',
+    repo: '0a52730597fb4ffa01fc117d9e71e3a9.github.io',
+    owner: '0a52730597fb4ffa01fc117d9e71e3a9',
+    admin: ['0a52730597fb4ffa01fc117d9e71e3a9'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://g0uz1.top/media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>

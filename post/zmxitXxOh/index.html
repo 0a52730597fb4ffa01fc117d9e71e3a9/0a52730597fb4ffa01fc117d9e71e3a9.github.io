@@ -1,0 +1,449 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Example</title>
+<meta name="description" content=": )  It's Example Blog. " />
+<link rel="shortcut icon" href="https://g0uz1.top/favicon.ico?v=1689148240281">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://g0uz1.top/styles/main.css">
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://g0uz1.top">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://g0uz1.top/images/avatar.png?v=1689148240281" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Example</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-go%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7">①. Go语言特性</a>
+<ul>
+<li><a href="#0x01-go%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9">0x01. Go语言特点</a></li>
+<li><a href="#0x02-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">0x02. 应用场景</a></li>
+</ul>
+</li>
+<li><a href="#2-go%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85">②. Go环境安装</a>
+<ul>
+<li><a href="#0x01-go%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8B%E8%BD%BD">0x01. Go安装包下载</a></li>
+<li><a href="#0x02-go%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE">0x02. Go语言环境变量设置</a></li>
+<li><a href="#0x02-gopath%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3">0x02. GOPATH目录详解</a></li>
+</ul>
+</li>
+<li><a href="#3-go%E7%A8%8B%E5%BA%8F%E7%A4%BA%E4%BE%8B">③. Go程序示例</a>
+<ul>
+<li><a href="#0x01-hello-world-%E7%A4%BA%E4%BE%8B">0x01. Hello World 示例</a></li>
+<li><a href="#0x02-go%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84">0x02. Go代码结构</a></li>
+</ul>
+</li>
+<li><a href="#4-%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C">④. 编译&amp;运行</a>
+<ul>
+<li><a href="#0x01-%E4%B8%8D%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8Cgo%E4%BB%A3%E7%A0%81">0x01. 不编译运行go代码</a></li>
+<li><a href="#0x02-%E7%BC%96%E8%AF%91%E5%90%8E%E8%BF%90%E8%A1%8Cgo%E7%A8%8B%E5%BA%8F">0x02. 编译后运行go程序</a></li>
+<li><a href="#0x03-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91">0x03. 跨平台编译</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%98%E9%87%8F">变量</a>
+<ul>
+<li><a href="#0x01-%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E">0x01. 变量声明</a></li>
+<li><a href="#0x02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">0x02. 数据类型</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="ri-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></div>
+    <a class="rss" href="https://g0uz1.top/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">GO编程基础</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2023-04-21 / 5 min read
+        </div>
+        
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://cdn-1252062383.cos.ap-beijing.myqcloud.com/202304221609634.png" alt="">
+        
+        <div class="post-content yue">
+          <h3 id="1-go语言特性">①. Go语言特性</h3>
+<h4 id="0x01-go语言特点">0x01. Go语言特点</h4>
+<p>&gt; 自动垃圾回收<br>
+&gt; 更丰富的内置类型<br>
+&gt; 函数多返回值<br>
+&gt; 错误处理<br>
+&gt; 匿名函数和闭包<br>
+&gt; 类型和接口<br>
+&gt; 并发处理能力<br>
+&gt; 反射</p>
+<h4 id="0x02-应用场景">0x02. 应用场景</h4>
+<p>多应用于应用高并发，低延时的应用场景。</p>
+<hr /> 
+<h3 id="2-go环境安装">②. Go环境安装</h3>
+<h4 id="0x01-go安装包下载">0x01. Go安装包下载</h4>
+<p>官方安装包下载地址：</p>
+<ul>
+<li>https://golang.org/dl/</li>
+<li>https://golang.google.cn/dl/</li>
+</ul>
+<p>国内镜像源下载地址：</p>
+<ul>
+<li>https://mirrors.ustc.edu.cn/golang/</li>
+<li>https://studygolang.com/dl</li>
+</ul>
+<h4 id="0x02-go语言环境变量设置">0x02. Go语言环境变量设置</h4>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GOROOT</td>
+<td>Go 语言安装根目录的路径，也就是 GO 语言的安装路径。</td>
+</tr>
+<tr>
+<td>GOPATH</td>
+<td>Go 语言的工作目录， 用于存放源代码、二进制文件，临时文件等。</td>
+</tr>
+<tr>
+<td>GOPROXY</td>
+<td>Go 代理配置，便于加速依赖包的下载速度。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="0x02-gopath目录详解">0x02. GOPATH目录详解</h4>
+<blockquote>
+<p>GOPATH 下会有3个目录：src、bin、pkg</p>
+</blockquote>
+<ul>
+<li>src目录：go编译时查找代码的地方；按照golang默认约定，go run，go install等命令的当前工作路径（即在此路径下执行上述命令）。</li>
+<li>bin目录：go get这种bin工具的时候，二进制文件下载的目的地； golang编译可执行文件存放路径</li>
+<li>pkg目录：golang编译包过程中生成的临时文件。会检测代码变动，从而减少编译时间。</li>
+</ul>
+<hr /> 
+<h3 id="3-go程序示例">③. Go程序示例</h3>
+<h4 id="0x01-hello-world-示例">0x01. Hello World 示例</h4>
+<pre><code class="language-go">package main 
+//package用于包声明，必须在源文件中非注释的第一行指明这个文件属于哪个包。
+//package main表示一个可独立执行的程序，每个 Go 应用程序都包含一个名为 main 的包。
+
+import &quot;fmt&quot; 
+//go编译器引入fmt包(函数，或其他元素)，fmt 包实现了格式化 IO（输入/输出）的函数。
+
+func main() { //注意 { 不能单独放在一行
+//定义主函数，即程序开始执行的函数。
+//main 函数是每一个可执行程序所必须包含的，一般来说都是在启动后第一个执行的函数。
+//如果有 init() 函数则会先执行该函数。
+	fmt.Prinln(&quot;Hello World!&quot;) //打印输出 Hello World
+    //可以将字符串输出到控制台。
+}
+</code></pre>
+<h4 id="0x02-go代码结构">0x02. Go代码结构</h4>
+<h3 id="4-编译运行">④. 编译&amp;运行</h3>
+<h4 id="0x01-不编译运行go代码">0x01. 不编译运行go代码</h4>
+<pre><code>root@macbook:~# go run 1.go
+Hello World!
+</code></pre>
+<h4 id="0x02-编译后运行go程序">0x02. 编译后运行go程序</h4>
+<pre><code>root@macbook:~# go build hello.go
+root@macbook:~# chmod +x hello
+root@macbook:~# ./hello
+Hello, World!
+</code></pre>
+<h4 id="0x03-跨平台编译">0x03. 跨平台编译</h4>
+<pre><code>root@macbook:~# CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -v -ldflags '-w -s' -gcflags '-N -l' -o hello hello.go
+root@macbook:~# scp hello root@armbian:/root/
+root@armbian:~# chmod +x hello
+root@armbian:~# ./hello
+Hello, World!
+</code></pre>
+<h3 id="变量">变量</h3>
+<h4 id="0x01-变量声明">0x01. 变量声明</h4>
+<p><code>标准格式</code><br>
+声明变量：var name type ，其中var是声明变量的关键字，name是变量名称，type是变量类型.标准格式eg: var a, b *int</p>
+<pre><code class="language-Go">package main
+import &quot;fmt&quot;
+
+func main(){
+    //变量声明
+    var a,b,c int
+    var d str
+    //变量赋值
+    a = 5
+    b = 4
+    d = a - b + c
+    fmt.Println(c)
+
+}
+</code></pre>
+<h4 id="0x02-数据类型">0x02. 数据类型</h4>
+<p>var s1 string<br>
+s1 = &quot;Learn Go!&quot;<br>
+// 一次声明多个变量<br>
+var b, c int = 1, 2<br>
+var d = true</p>
+<p>注释符<br>
+注释不会被编译，常用于函数功能描述<br>
+// 单行注释<br>
+/*<br>
+多行注释<br>
+*/</p>
+<p>标识符<br>
+标识符用来命名变量、类型等程序实体。一个标识符实际上就是一个或是多个字母(A<sub>Z和a</sub>z)数字(0~9)、下划线_组成的序列，但是第一个字符必须是字母或下划线而不能是数字。</p>
+<p>保留字<br>
+Go 代码中会使用到的 25 个保留字<br>
+break	default	func	interface	select<br>
+case	defer	go	map	struct<br>
+chan	else	goto	package	switch<br>
+const	fallthrough	if	range	type<br>
+continue	for	import	return	var<br>
+Go 语言还有 36 个预定义标识符<br>
+append	bool	byte	cap	close	complex<br>
+complex64	complex128	uint16	copy	false	float32<br>
+float64	imag	int	int8	int16	uint32<br>
+int32	int64	iota	len	make	new<br>
+nil	panic	uint64	print	println	real<br>
+recover	string	true	uint	uint8	uintptr</p>
+<p>go Module<br>
+可以在任何位置创建你的Go语言项目<br>
+go mod init</p>
+<p>编译</p>
+<p>安装</p>
+<p>跨平台性<br>
+CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -v -ldflags '-w -s' -gcflags '-N -l' -o proxy main/main.go</p>
+<p>goos<br>
+代表要变异的操作系统<br>
+goarch<br>
+代表编译的目标处理器架构</p>
+<p>go env -w GOPROXY=https://goproxy.cn</p>
+<p>强类型语言是一种强制类型定义的语言,一旦某一个变量被定义类型,如果不经过强制转换,则它永远就是该数据类型了,</p>
+<ul>
+<li>https://github.com/pibigstar/go-demo</li>
+<li></li>
+</ul>
+
+        </div>
+
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://g0uz1.top/post/8umPK1tkD/">
+                <h3 class="post-title">
+                  <i class="ri-arrow-left-line"></i>
+                  常见端口渗透 
+                </h3>
+              </a>
+            </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://g0uz1.top/post/hdx3hqzh3/">
+                <h3 class="post-title">
+                  Frida JavaScript API 学习笔记
+                  <i class="ri-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'a23dba280edd1e49037e',
+    clientSecret: 'fd74d7d6b3470a691211438635d3e6b0d372ff6f',
+    repo: '0a52730597fb4ffa01fc117d9e71e3a9.github.io',
+    owner: '0a52730597fb4ffa01fc117d9e71e3a9',
+    admin: ['0a52730597fb4ffa01fc117d9e71e3a9'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://g0uz1.top/media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>

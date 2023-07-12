@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://g0uz1.top</id>
+    <title>Example</title>
+    <updated>2023-07-12T07:50:53.358Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://g0uz1.top"/>
+    <link rel="self" href="https://g0uz1.top/atom.xml"/>
+    <subtitle>: )  It&apos;s Example Blog. </subtitle>
+    <logo>https://g0uz1.top/images/avatar.png</logo>
+    <icon>https://g0uz1.top/favicon.ico</icon>
+    <rights>All rights reserved 2023, Example</rights>
+    <entry>
+        <title type="html"><![CDATA[PostgreSQL]]></title>
+        <id>https://g0uz1.top/post/PA7e3sDQK/</id>
+        <link href="https://g0uz1.top/post/PA7e3sDQK/">
+        </link>
+        <updated>2023-06-28T12:57:08.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[jdbc漏洞]]></title>
+        <id>https://g0uz1.top/post/JramxeOG8/</id>
+        <link href="https://g0uz1.top/post/JramxeOG8/">
+        </link>
+        <updated>2023-06-27T13:10:54.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Jolokia 利用]]></title>
+        <id>https://g0uz1.top/post/fbYmfdKYy/</id>
+        <link href="https://g0uz1.top/post/fbYmfdKYy/">
+        </link>
+        <updated>2023-06-27T12:22:53.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[shellcode 免杀学习]]></title>
+        <id>https://g0uz1.top/post/I6hLmcsTq/</id>
+        <link href="https://g0uz1.top/post/I6hLmcsTq/">
+        </link>
+        <updated>2023-06-27T10:18:46.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[一些网站]]></title>
+        <id>https://g0uz1.top/post/TyoamQau-/</id>
+        <link href="https://g0uz1.top/post/TyoamQau-/">
+        </link>
+        <updated>2023-06-19T01:18:47.000Z</updated>
+    </entry>
+</feed>
